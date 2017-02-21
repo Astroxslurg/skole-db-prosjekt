@@ -9,3 +9,11 @@ Oppgave 1 b
   styrke eller kondisjonsresultat.
 
 2.
+  Vi har egne entitetsklasser "Treningsøkt" og "Øvelse" hvor brukeren kan legge
+  inn hva hen ønsker. Under øvelse kan brukeren sette seg mål og se tidligere
+  mål, samt informasjon om når målene skal være innfridde og om målene evt.
+  er nådd.
+
+3.
+  Vi lar brukeren registrere resultatet fra treningene sine, samt ha tilgang
+  til sine allerede nådde mål.
