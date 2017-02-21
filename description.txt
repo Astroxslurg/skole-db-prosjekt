@@ -1,0 +1,8 @@
+Oppgave 1 b
+
+1. Vi har en entitetsklasse som heter Treningsøkt hvor vi har med tilhørende
+  data, som treningsøktid, dato, og tid. Brukeren får her mulighet til å legge
+  til egne notat der vadkommende kan skrive hvordan treningen har gått.
+  Vi har også med i resultatet hvilke(n)
+  øvelse som ble utført og avhengig av hva slags øvelse det var er det med egne
+  styrke eller kondisjonsresultat.
