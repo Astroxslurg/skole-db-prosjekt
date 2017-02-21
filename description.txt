@@ -17,3 +17,20 @@ Oppgave 1 b
 3.
   Vi lar brukeren registrere resultatet fra treningene sine, samt ha tilgang
   til sine allerede nådde mål.
+
+
+
+
+5.
+  Her har vi laget en egen entitetsklasse kalt Treningsprogrammal.
+  Der kan brukeren lagre maler for både tidligere treninger, samt helt nye.
+
+6.
+  Gps-data er ikke relevant da vi har tatt for oss trening på treningsstudio.
+  Vi har derimot en egen entitetsklasse kalt Puls, hvor puls blir registrert.
+
+7.
+  Dette kan programmet gjøre. Vi lar brukeren lagre notater for hver trening.
+
+8.
+  
