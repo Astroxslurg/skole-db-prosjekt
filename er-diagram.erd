@@ -1,12 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram height="800" made_with_version="1.5" name="Default" width="850">
-<entity id="0" is_weak="false" name="Treningsøkt" x="37" y="76">
-<attributes/>
+<entity id="0" is_weak="false" name="Treningsøkt" x="59" y="105">
+<attributes>
+<attribute is_hidden="false" is_key="true" name="id" type=""/>
+<attribute is_hidden="false" is_key="false" name="dato" type=""/>
+<attribute is_hidden="false" is_key="false" name="startTid" type=""/>
+<attribute is_hidden="false" is_key="false" name="personligForm" type=""/>
+<attribute is_hidden="false" is_key="false" name="prestasjon" type=""/>
+<attribute is_hidden="false" is_key="false" name="notat" type=""/>
+</attributes>
 </entity>
-<entity id="1" is_weak="false" name="Resultat" x="404" y="194">
-<attributes/>
+<entity id="1" is_weak="false" name="Resultat" x="507" y="291">
+<attributes>
+<attribute is_hidden="false" is_key="true" name="id" type=""/>
+</attributes>
 </entity>
-<entity id="2" is_weak="false" name="Øvelse" x="245" y="208">
-<attributes/>
+<entity id="2" is_weak="false" name="Øvelse" x="137" y="337">
+<attributes>
+<attribute is_hidden="false" is_key="true" name="id" type=""/>
+<attribute is_hidden="false" is_key="false" name="navn" type=""/>
+<attribute is_hidden="false" is_key="false" name="beskrivelse" type=""/>
+<attribute is_hidden="false" is_key="false" name="type" type="Boolean"/>
+</attributes>
 </entity>
+<entity id="3" is_weak="false" name="Kondisjonsresultat" x="576" y="483">
+<attributes>
+<attribute is_hidden="false" is_key="false" name="lengde" type=""/>
+<attribute is_hidden="false" is_key="false" name="tid" type=""/>
+</attributes>
+</entity>
+<entity id="4" is_weak="false" name="Styrkeresultat" x="393" y="482">
+<attributes>
+<attribute is_hidden="false" is_key="false" name="belastning" type=""/>
+<attribute is_hidden="false" is_key="false" name="repitisjoner" type=""/>
+<attribute is_hidden="false" is_key="false" name="sett" type=""/>
+</attributes>
+</entity>
+<entity id="9" is_weak="false" name="puls" x="456" y="101">
+<attributes>
+<attribute is_hidden="false" is_key="false" name="treningsøkstId" type=""/>
+<attribute is_hidden="false" is_key="false" name="sekunderEtterStart" type=""/>
+<attribute is_hidden="false" is_key="false" name="puls" type=""/>
+</attributes>
+</entity>
+<diamond id="10" is_weak="false" name="pulsGjennomTreningen" x="211" y="114">
+<attributes/>
+</diamond>
+<circle id="5" name="O" x="529" y="397"/>
+<line cardinality_string="" has_u="true" id="6" is_weak="false" role="" style="1" turned="false">
+<connection connection_side="1" direction="1" object_id="4" relation_point_x="454" relation_point_y="482"/>
+<connection connection_side="0" direction="0" object_id="5" relation_point_x="529" relation_point_y="412"/>
+</line>
+<line cardinality_string="" has_u="true" id="7" is_weak="false" role="" style="1" turned="false">
+<connection connection_side="1" direction="1" object_id="3" relation_point_x="655" relation_point_y="483"/>
+<connection connection_side="2" direction="0" object_id="5" relation_point_x="559" relation_point_y="412"/>
+</line>
+<line cardinality_string="" has_u="false" id="8" is_weak="true" role="" style="1" turned="false">
+<connection connection_side="3" direction="1" object_id="1" relation_point_x="544" relation_point_y="336"/>
+<connection connection_side="1" direction="1" object_id="5" relation_point_x="544" relation_point_y="397"/>
+</line>
+<line cardinality_string="" has_u="false" id="11" is_weak="false" role="" style="0" turned="false">
+<connection connection_side="2" direction="0" object_id="0" relation_point_x="163" relation_point_y="165"/>
+<connection connection_side="0" direction="0" object_id="10" relation_point_x="211" relation_point_y="130"/>
+</line>
+<line cardinality_string="" has_u="false" id="12" is_weak="false" role="" style="0" turned="false">
+<connection connection_side="0" direction="0" object_id="9" relation_point_x="456" relation_point_y="139"/>
+<connection connection_side="2" direction="0" object_id="10" relation_point_x="243" relation_point_y="130"/>
+</line>
 </diagram>
