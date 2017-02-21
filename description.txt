@@ -1,4 +1,4 @@
-Oppgave 1 b
+﻿Oppgave 1 b
 
 1.
   Vi har en entitetsklasse som heter Treningsøkt hvor vi har med tilhørende
@@ -18,7 +18,13 @@ Oppgave 1 b
   Vi lar brukeren registrere resultatet fra treningene sine, samt ha tilgang
   til sine allerede nådde mål.
 
-
+4. 
+  Man vil ikke kunne finne denne informasjoen direkte i databasen, 
+  men all nødvendig data er lagret. Datoen fins i entitetsklassen 
+  "Treningsøkt", selve resultatet ligger i "Resultat" og hvilken 
+  øvelse som ble gjort lagres i "Øvelse". Tidligere og nåværende 
+  mål er lagret i "Mål". Java-programmet vil bruke denne 
+  informasjonen til å gjøre utregningene som trengs.
 
 
 5.
@@ -33,4 +39,5 @@ Oppgave 1 b
   Dette kan programmet gjøre. Vi lar brukeren lagre notater for hver trening.
 
 8.
-  
+  Vi har en entitetsklasse for øvelser og en for grupper. Resten
+  er opp til programmet.
