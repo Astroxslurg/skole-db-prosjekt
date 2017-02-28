@@ -36,9 +36,9 @@
 <attribute is_hidden="false" is_key="false" name="sett" type=""/>
 </attributes>
 </entity>
-<entity id="9" is_weak="false" name="puls" x="605" y="78">
+<entity id="9" is_weak="true" name="puls" x="605" y="78">
 <attributes>
-<attribute is_hidden="false" is_key="false" name="treningsøkstId" type=""/>
+<attribute is_hidden="false" is_key="true" name="treningsøktsId" type=""/>
 <attribute is_hidden="false" is_key="false" name="sekunderEtterStart" type=""/>
 <attribute is_hidden="false" is_key="false" name="puls" type=""/>
 </attributes>
@@ -114,7 +114,7 @@
 <connection connection_side="0" direction="0" object_id="10" relation_point_x="330" relation_point_y="113"/>
 </line>
 <line cardinality_string="(1,1)" has_u="false" id="12" is_weak="false" role="" style="0" turned="false">
-<connection connection_side="0" direction="0" object_id="9" relation_point_x="605" relation_point_y="116"/>
+<connection connection_side="0" direction="0" object_id="9" relation_point_x="605" relation_point_y="120"/>
 <connection connection_side="2" direction="0" object_id="10" relation_point_x="362" relation_point_y="113"/>
 </line>
 <line cardinality_string="(0,n)" has_u="false" id="14" is_weak="false" role="" style="0" turned="false">
