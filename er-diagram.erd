@@ -36,7 +36,7 @@
 <attribute is_hidden="false" is_key="false" name="sett" type=""/>
 </attributes>
 </entity>
-<entity id="9" is_weak="true" name="puls" x="605" y="78">
+<entity id="9" is_weak="true" name="Puls" x="605" y="78">
 <attributes>
 <attribute is_hidden="false" is_key="true" name="treningsøktsId" type=""/>
 <attribute is_hidden="false" is_key="false" name="sekunderEtterStart" type=""/>
