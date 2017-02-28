@@ -167,11 +167,11 @@
 <connection connection_side="0" direction="0" object_id="9" relation_point_x="285" relation_point_y="410"/>
 <connection connection_side="2" direction="0" object_id="37" relation_point_x="182" relation_point_y="401"/>
 </line>
-<line cardinality_string="(0,n)" has_u="false" id="41" is_weak="false" role="øvelse1" style="0" turned="false">
+<line cardinality_string="(0,n)" has_u="false" id="41" is_weak="false" role="" style="0" turned="false">
 <connection connection_side="0" direction="0" object_id="2" relation_point_x="360" relation_point_y="279"/>
 <connection connection_side="3" direction="1" object_id="40" relation_point_x="257" relation_point_y="183"/>
 </line>
-<line cardinality_string="(0,n)" has_u="false" id="42" is_weak="false" role="øvelse2" style="0" turned="false">
+<line cardinality_string="(0,n)" has_u="false" id="42" is_weak="false" role="" style="0" turned="false">
 <connection connection_side="1" direction="1" object_id="2" relation_point_x="384" relation_point_y="249"/>
 <connection connection_side="2" direction="0" object_id="40" relation_point_x="273" relation_point_y="167"/>
 </line>
