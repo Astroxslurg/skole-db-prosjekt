@@ -1,4 +1,4 @@
-﻿Oppgave 1 b
+﻿Oppgave 1 a, b
 
 Vi har valgt å rette oss mot trening ved treningssenter.
 Noen øvelser vi vil lagre er: knebøy(8 rep, 3 sett, 100 kg),
@@ -55,3 +55,19 @@ som var litt tung. Der klarte jeg bare 5 reps på siste settet."
 8.
   Vi har en entitetsklasse for øvelser og en for grupper. Resten
   er opp til programmet.
+
+
+
+
+
+1 b, b
+
+For alle sterke klasser som ikke har spesialisering har vi laget en egen relasjon.
+For alle mange-til-mange-relasjoner (harØvelse, delAvGruppe) har vi laget en egen relasjon med foreign keys til "deltagerne".
+Der vi har en-til-mange-relasjoner har vi lagt inn en foreign key på den siden det kun finnes en av.
+I den svake klassen Puls, har vi lagt til en foreign key til Treningsøkt. Vi har også lagt inn en primary key,
+bestående av foreign key, samt tid målt i sekunder etter start.
+Siden at det er en total spesialisering og disjunkt, har vi valgt å implementere enhver subklasse som en egen relasjon.
+Nøkkel og attributter fra superklasser blir lagret i hver subklasse.
+Vi har lagt inn onDelete- og onUpdate-informasjon, slik at der det er en-relasjon, må nødvendigvis denne tabellen slettes eller
+oppdateres når tabellen den er avhengig av endres/slettes.
