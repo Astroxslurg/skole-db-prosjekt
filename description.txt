@@ -63,10 +63,9 @@ som var litt tung. Der klarte jeg bare 5 reps på siste settet."
 1 b, b
 
 For alle sterke klasser som ikke har spesialisering har vi laget en egen relasjon.
-For alle mange-til-mange-relasjoner (harØvelse, delAvGruppe) har vi laget en egen relasjon med foreign keys til "deltagerne".
+For alle mange-til-mange-relasjoner (HAR_OVELSE, DEL_AV_GRUPPE) har vi laget en egen relasjon med foreign keys til "deltagerne".
 Der vi har en-til-mange-relasjoner har vi lagt inn en foreign key på den siden det kun finnes en av.
-I den svake klassen Puls, har vi lagt til en foreign key til Treningsøkt. Vi har også lagt inn en primary key,
-bestående av foreign key, samt tid målt i sekunder etter start.
+Vi har lagt inn en rekursiv relasjon (KAN_ERSTATTE) ut fra OVELSE.
 Siden at det er en total spesialisering og disjunkt, har vi valgt å implementere enhver subklasse som en egen relasjon.
 Nøkkel og attributter fra superklasser blir lagret i hver subklasse.
 Vi har lagt inn onDelete- og onUpdate-informasjon, slik at der det er en-relasjon, må nødvendigvis denne tabellen slettes eller
