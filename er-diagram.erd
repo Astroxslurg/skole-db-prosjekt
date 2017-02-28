@@ -23,7 +23,7 @@
 <attribute is_hidden="false" is_key="false" name="type" type="Boolean"/>
 </attributes>
 </entity>
-<entity id="3" is_weak="false" name="Kondisjonsresultat" x="147" y="524">
+<entity id="3" is_weak="false" name="Kondisjonsresultat" x="146" y="529">
 <attributes>
 <attribute is_hidden="false" is_key="false" name="lengde" type=""/>
 <attribute is_hidden="false" is_key="false" name="tid" type=""/>
@@ -38,8 +38,8 @@
 </entity>
 <entity id="9" is_weak="true" name="Puls" x="605" y="78">
 <attributes>
-<attribute is_hidden="false" is_key="true" name="treningsøktsId" type=""/>
-<attribute is_hidden="false" is_key="true" name="sekunderEtterStart" type=""/>
+<attribute is_hidden="false" is_key="true" name="treningsøktsId(delvis)" type=""/>
+<attribute is_hidden="false" is_key="false" name="sekunderEtterStart" type=""/>
 <attribute is_hidden="false" is_key="false" name="puls" type=""/>
 </attributes>
 </entity>
@@ -102,7 +102,7 @@
 <connection connection_side="0" direction="0" object_id="5" relation_point_x="84" relation_point_y="440"/>
 </line>
 <line cardinality_string="" has_u="true" id="7" is_weak="false" role="" style="1" turned="false">
-<connection connection_side="1" direction="1" object_id="3" relation_point_x="226" relation_point_y="524"/>
+<connection connection_side="1" direction="1" object_id="3" relation_point_x="217" relation_point_y="529"/>
 <connection connection_side="2" direction="0" object_id="5" relation_point_x="114" relation_point_y="440"/>
 </line>
 <line cardinality_string="" has_u="false" id="8" is_weak="true" role="" style="1" turned="false">
