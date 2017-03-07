@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -14,10 +10,11 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProgramController">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProgramController">
    <children>
       <TabPane prefHeight="500.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -147,6 +144,72 @@
                   </AnchorPane>
             </content>
           </Tab>
+            <Tab text="Resultat">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <MenuButton layoutX="152.0" layoutY="87.0" mnemonicParsing="false" text="Øvelser">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                            <MenuItem mnemonicParsing="false" text="Action 2" />
+                          </items>
+                        </MenuButton>
+                        <Label layoutX="31.0" layoutY="84.0" text="Øvelse:">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="118.0" text="Resultat">
+                           <font>
+                              <Font name="Garuda" size="39.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="31.0" layoutY="138.0" text="Type:">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="styrke_knapp1" layoutX="203.0" layoutY="145.0" mnemonicParsing="false" onAction="#styrkeButtonIsActivatedInMaal" selected="true" text="Styrke">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="resultat_radio" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="kondisjon_knapp1" layoutX="115.0" layoutY="145.0" mnemonicParsing="false" onAction="#kondisjonButtonIsActivatedInMaal" selected="true" text="Kondisjon" toggleGroup="$resultat_radio" />
+                        <Label fx:id="resultat_kondisjon_lengde" layoutX="28.0" layoutY="236.0" text="Lengde:">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resultat_kondisjon_tid" layoutX="48.0" layoutY="285.0" text="Tid:">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resultat_styrke_belastning" layoutX="14.0" layoutY="236.0" text="Belastning:" visible="false">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resultat_styrke_repetisjon" layoutX="4.0" layoutY="277.0" text="Repetisjoner:" visible="false">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resultat_styrke_sett" layoutX="44.0" layoutY="334.0" text="Sett:" visible="false">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="resultat_boks_belastning" layoutX="183.0" layoutY="239.0" visible="false" />
+                        <TextField fx:id="resultat_boks_lengde" layoutX="183.0" layoutY="239.0" />
+                        <TextField fx:id="resultat_boks_repetisjoner" layoutX="183.0" layoutY="280.0" visible="false" />
+                        <TextField fx:id="resultat_boks_tid" layoutX="183.0" layoutY="280.0" />
+                        <TextField fx:id="resultat_boks_sett" layoutX="183.0" layoutY="337.0" visible="false" />
+                        <Button layoutX="311.0" layoutY="401.0" mnemonicParsing="false" text="Legg til resultat" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>
