@@ -1,0 +1,4 @@
+Use cases:
+1. Innlegging av en trening md all tilhørend informasjon.
+2. Legge inn n treningsmal.
+3. Legge inn et mål for en spesifikk øvelse.
