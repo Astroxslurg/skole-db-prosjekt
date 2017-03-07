@@ -18,6 +18,7 @@ public class ProgramController {
 	@FXML TextField ovelse_navn;
 	@FXML TextArea ovelse_beskrivelse;
 	@FXML ToggleGroup ovelse_type;
+	@FXML MenuButton ovelse_gruppe;
 	
 	@FXML RadioButton kondisjon_knapp;
 	@FXML RadioButton styrke_knapp;
@@ -27,7 +28,6 @@ public class ProgramController {
 	@FXML TextField styrke_boks_sett;
 	@FXML TextField kondisjon_boks_lengde;
 	@FXML TextField kondisjon_boks_tid;
-	@FXML MenuButton gruppe;
 	@FXML DatePicker startdato;
 	@FXML DatePicker maaldato;
 	@FXML DatePicker naddato;
