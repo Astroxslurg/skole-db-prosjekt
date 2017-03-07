@@ -1,5 +1,6 @@
 package application;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -36,6 +37,11 @@ public class ProgramController {
 	@FXML Label kondisjon_tid;
 	
 	
+	
+	@FXML
+	void styrkeButtonIsActivated(Event event) {
+		
+	}
 	
 	@FXML
 	private void test(){
