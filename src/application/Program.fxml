@@ -25,7 +25,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#test" text="Button" />
+                        <Button mnemonicParsing="false" onAction="#submitExercise" text="Legg til øvelse" />
                         <Label layoutX="168.0" layoutY="-3.0" text="Øvelse">
                            <font>
                               <Font name="Garuda" size="39.0" />
@@ -61,13 +61,13 @@
                               </MenuButton>
                               <RadioButton fx:id="ovelse_styrke_knapp" layoutX="100.0" layoutY="50.0" mnemonicParsing="false" text="Styrke">
                                  <toggleGroup>
-                                    <ToggleGroup fx:id="type_ovelse" />
+                                    <ToggleGroup fx:id="ovelse_type" />
                                  </toggleGroup></RadioButton>
                               <TextField fx:id="ovelse_navn" layoutX="-11.0" layoutY="2.0" promptText="Navn" />
                               <RadioButton fx:id="ovelse_kondisjon_knapp" layoutX="-9.0" layoutY="50.0" mnemonicParsing="false" selected="true" text="Kondisjon" toggleGroup="$type_ovelse" />
                            </children>
                         </AnchorPane>
-                        <TextArea fx:id="beskrivelse_av_ovelse" layoutX="141.0" layoutY="227.0" prefHeight="200.0" prefWidth="200.0" promptText="Legg til en beskrivelse her..." />
+                        <TextArea fx:id="ovelse_beskrivelse" layoutX="141.0" layoutY="227.0" prefHeight="200.0" prefWidth="200.0" promptText="Legg til en beskrivelse her..." />
                      </children>
                   </AnchorPane>
             </content>
