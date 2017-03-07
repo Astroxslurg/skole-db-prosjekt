@@ -21,7 +21,7 @@ public class ProgramController {
 	
 	@FXML RadioButton kondisjon_knapp;
 	@FXML RadioButton styrke_knapp;
-	@FXML ToggleGroup type_mal;
+	@FXML ToggleGroup type_maal;
 	@FXML TextField styrke_boks_belastning;
 	@FXML TextField styrke_boks_repetisjoner;
 	@FXML TextField styrke_boks_sett;
@@ -29,7 +29,7 @@ public class ProgramController {
 	@FXML TextField kondisjon_boks_tid;
 	@FXML MenuButton gruppe;
 	@FXML DatePicker startdato;
-	@FXML DatePicker maldato;
+	@FXML DatePicker maaldato;
 	@FXML DatePicker naddato;
 	@FXML Label styrke_belastning;
 	@FXML Label styrke_repetisjoner;
