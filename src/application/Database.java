@@ -14,7 +14,7 @@ public class Database {
     
     public static void test(){
     	try{
-            Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+    		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
             PreparedStatement stmt = conn.prepareStatement("SELECT Beskrivelse FROM GRUPPE");
             ResultSet rs = stmt.executeQuery();        
             while(rs.next()){
@@ -26,7 +26,19 @@ public class Database {
         }
     }
     
-    /*  FUNKSJON FOR Å LEGGE TIL I DATABASEN
+    public static void insertExercise(String Navn, String Beskrivelse, int Type) {
+    	try {
+    		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+    		PreparedStatement stmt = conn.prepareStatement("insert into OVELSE (Navn, Beskrivelse, Type) values (?,?,?)");
+    		stmt.setString(1, Navn);
+    		stmt.setString(2, Beskrivelse);
+    		stmt.setInt(3, Type);
+    	} catch(SQLException e) {
+        	System.out.println(e);
+        }
+    }
+    
+    /*  FUNKSJON FOR ï¿½ LEGGE TIL I DATABASEN
     public static void createTopic(Topic topic){
     	try{
             Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
@@ -43,7 +55,7 @@ public class Database {
     }
     */
     
-    /* FUNKSJON FOR Å SLETTE TING I DATABASEN
+    /* FUNKSJON FOR ï¿½ SLETTE TING I DATABASEN
     public static void deleteTopic(Topic topic){
     	try{
             Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
