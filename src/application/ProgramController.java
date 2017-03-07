@@ -2,6 +2,7 @@ package application;
 
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
@@ -19,6 +20,7 @@ public class ProgramController {
 	@FXML TextArea ovelse_beskrivelse;
 	@FXML ToggleGroup ovelse_type;
 	@FXML MenuButton ovelse_gruppe;
+	@FXML Button ovelse_submit;
 	
 	@FXML RadioButton kondisjon_knapp;
 	@FXML RadioButton styrke_knapp;
@@ -36,6 +38,7 @@ public class ProgramController {
 	@FXML Label styrke_sett;
 	@FXML Label kondisjon_lengde;
 	@FXML Label kondisjon_tid;
+	@FXML Button legg_til_maal_btn;
 	
 	
 	
