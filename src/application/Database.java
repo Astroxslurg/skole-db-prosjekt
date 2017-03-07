@@ -24,6 +24,39 @@ public class Database {
         catch(SQLException e){
             System.out.println();
         }
-
     }
+    
+    /*  FUNKSJON FOR Å LEGGE TIL I DATABASEN
+    public static void createTopic(Topic topic){
+    	try{
+            Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO topic (lectureID, number, name) VALUES (?,?,?)");
+            stmt.setInt(1, Integer.parseInt(topic.getLectureID()));
+            stmt.setInt(2, Integer.parseInt(topic.getTopicNumber()));
+            stmt.setString(3, topic.getTopicName());
+            
+            stmt.executeUpdate();
+    	}
+        catch(SQLException e){
+        	System.out.println(e);
+        }
+    }
+    */
+    
+    /* FUNKSJON FOR Å SLETTE TING I DATABASEN
+    public static void deleteTopic(Topic topic){
+    	try{
+            Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+            PreparedStatement stmt = conn.prepareStatement("DELETE FROM topic WHERE topicID = ?");
+            stmt.setInt(1, Integer.parseInt(topic.getTopicID()));
+            
+            stmt.executeUpdate();
+    	}
+        catch(SQLException e){
+        	System.out.println(e);
+        }
+    }*/
+    
+    
+    
 }
