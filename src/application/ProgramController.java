@@ -90,7 +90,10 @@ public class ProgramController {
 	
 	@FXML
 	private void submitExercise(){
-		
-		Database.insertExercise("Franskpress", "Ligg på ryggen, hold ei stang med vekter med knokene mot deg og løft fra hode og opp bare med bruk av triceps", 1);
+		int type = 1;
+		if (ovelse_kondisjon_knapp.isSelected()) {
+			type = 0;
+		}
+		Database.insertExercise(ovelse_navn.getText(), ovelse_beskrivelse.getText(), type);
 	}
 }
