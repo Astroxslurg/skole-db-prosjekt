@@ -16,10 +16,7 @@ public class Database {
     	try{
             Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
             PreparedStatement stmt = conn.prepareStatement("SELECT Beskrivelse FROM GRUPPE");
-
-            System.out.println("4");
-            ResultSet rs = stmt.executeQuery();
-            
+            ResultSet rs = stmt.executeQuery();        
             while(rs.next()){
             	System.out.println(rs.getString(1));
             }
