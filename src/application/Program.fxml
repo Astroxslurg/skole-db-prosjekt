@@ -99,11 +99,11 @@
                               <Font size="21.0" />
                            </font>
                         </Label>
-                        <RadioButton fx:id="styrke_knapp" layoutX="258.0" layoutY="253.0" mnemonicParsing="false" selected="true" text="Styrke">
+                        <RadioButton fx:id="styrke_knapp" layoutX="258.0" layoutY="253.0" mnemonicParsing="false" onAction="#styrkeButtonIsActivatedInMaal" selected="true" text="Styrke">
                            <toggleGroup>
                               <ToggleGroup fx:id="type_mal" />
                            </toggleGroup></RadioButton>
-                        <RadioButton fx:id="kondisjon_knapp" layoutX="139.0" layoutY="253.0" mnemonicParsing="false" selected="true" text="Kondisjon" toggleGroup="$type_mal" />
+                        <RadioButton fx:id="kondisjon_knapp" layoutX="139.0" layoutY="253.0" mnemonicParsing="false" selected="true" text="Kondisjon" toggleGroup="$type_mal" onAction="#kondisjonButtonIsActivatedInMaal"/>
                         <Label layoutX="14.0" layoutY="246.0" text="Type:">
                            <font>
                               <Font size="21.0" />
@@ -124,8 +124,8 @@
                               <Font size="21.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="styrke_boks_belastning" disable="true" layoutX="165.0" layoutY="305.0" visible="false" />
-                        <TextField fx:id="styrke_boks_repetisjoner" disable="true" layoutX="165.0" layoutY="355.0" visible="false" />
+                        <TextField fx:id="styrke_boks_belastning" layoutX="165.0" layoutY="305.0" visible="false" />
+                        <TextField fx:id="styrke_boks_repetisjoner" layoutX="165.0" layoutY="355.0" visible="false" />
                         <TextField fx:id="styrke_boks_sett" layoutX="165.0" layoutY="402.0" visible="false" />
                         <Label fx:id="kondisjon_lengde" layoutX="13.0" layoutY="305.0" text="Lengde">
                            <font>
