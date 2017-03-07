@@ -33,6 +33,7 @@ public class Database {
     		stmt.setString(1, Navn);
     		stmt.setString(2, Beskrivelse);
     		stmt.setInt(3, Type);
+    		stmt.executeUpdate();
     	} catch(SQLException e) {
         	System.out.println(e);
         }

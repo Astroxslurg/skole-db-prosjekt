@@ -25,7 +25,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#test" text="Button" />
+                        <Button mnemonicParsing="false" onAction="#submitExercise" text="Legg til øvelse" />
                         <Label layoutX="168.0" layoutY="-3.0" text="Øvelse">
                            <font>
                               <Font name="Garuda" size="39.0" />

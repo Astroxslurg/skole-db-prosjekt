@@ -15,17 +15,18 @@ public class ProgramController {
 	
 	@FXML RadioButton ovelse_styrke_knapp;
 	@FXML RadioButton ovelse_kondisjon_knapp;
+	@FXML TextField ovelse_navn;
+	@FXML TextArea ovelse_beskrivelse;
+	@FXML ToggleGroup ovelse_type;
+	
 	@FXML RadioButton kondisjon_knapp;
 	@FXML RadioButton styrke_knapp;
-	@FXML ToggleGroup type_ovelse;
 	@FXML ToggleGroup type_mal;
-	@FXML TextField ovelse_navn;
 	@FXML TextField styrke_bosk_belastning;
 	@FXML TextField styrke_boks_repetisjoner;
 	@FXML TextField styrke_bosk_sett;
 	@FXML TextField kondisjon_boks_lengde;
 	@FXML TextField kondisjon_boks_tid;
-	@FXML TextArea beskrivelse_av_ovelse;
 	@FXML MenuButton gruppe;
 	@FXML DatePicker startdato;
 	@FXML DatePicker maldato;
@@ -44,7 +45,8 @@ public class ProgramController {
 	}
 	
 	@FXML
-	private void test(){
-		Database.test();
+	private void submitExercise(){
+		
+		Database.insertExercise("Franskpress", "Ligg på ryggen, hold ei stang med vekter med knokene mot deg og løft fra hode og opp bare med bruk av triceps", 1);
 	}
 }
