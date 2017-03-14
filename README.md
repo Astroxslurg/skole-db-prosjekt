@@ -19,12 +19,13 @@ Brukergrensesnittet består av tre faner: Øvelse, Mål og Resultat. Disse fanen
 
 ### Legge til øvelse
 
-Man legger til en ny øvelse ved å fylle ut skjemaet i øvelse-fanen.
+Man legger til en ny øvelse ved å fylle ut skjemaet i øvelse-fanen og trykke på knappen kalt "Legg til øvelse"
 
 ### Sette et mål
 
-Fyll ut skjemaet
+Velg først hvilken øvelse du skal sette et mål for.
+Fyll så ut skjemaet og trykk "Legg til Mål" for å legge til målet.
 
 ### Lagre et resultat
 
-Velg hvilken øvelse som har blitt utfylt og fyll så ut det korresponderende skjemaet.
+Velg hvilken øvelse som har blitt utfylt og fyll så ut det korresponderende skjemaet. Resultatet blir lagt til når man trykker på "Legg til resultat"
