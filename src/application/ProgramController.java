@@ -1,6 +1,8 @@
 package application;
 
 import java.net.URL;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -153,19 +155,21 @@ public class ProgramController implements Initializable {
 			
 		}
 	}
-	
+	// Lengde, Tid, Ovelse_id, Start_dato, Maal_dato
 	@FXML
 	private void submitGoal(){
-		System.out.println(maal_ovelse.getValue().getId());
-		System.out.println(startdato.getValue());
-		System.out.println(maaldato.getValue());
+		int Ovelse_id = maal_ovelse.getValue().getId();
+		Date Start_dato = Date.valueOf(startdato.getValue());
+		Date Maal_dato = Date.valueOf(maaldato.getValue());
 		if(maal_ovelse.getValue().erStyrkeOvelse()){
-			System.out.println(styrke_boks_belastning);
-			System.out.println(styrke_boks_repetisjoner);
-			System.out.println(styrke_boks_repetisjoner);
+			float Belastning = Float.parseFloat(styrke_boks_belastning.getText());
+			int Repetisjoner = Integer.parseInt(styrke_boks_repetisjoner.getText());
+			int Sett = Integer.parseInt(styrke_boks_sett.getText());
+			Database.insertStyrkeGoal(Belastning, Repetisjoner, Sett, Ovelse_id, Start_dato, Maal_dato);
 		}else{
-			System.out.println(kondisjon_boks_lengde.getText());
-			System.out.println(kondisjon_boks_tid.getText());
+			int Lengde = Integer.parseInt(kondisjon_boks_lengde.getText());
+			int Tid = Integer.parseInt(kondisjon_boks_tid.getText());
+			Database.insertKondisjonGoal(Lengde, Tid, Ovelse_id, Start_dato, Maal_dato);
 		}
 	}
 	
