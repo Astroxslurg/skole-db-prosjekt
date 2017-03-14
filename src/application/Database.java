@@ -76,10 +76,11 @@ public class Database {
     public static void insertKondisjonResult(Exercise ovelse, int lengde, int tid) {
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
-    			PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSRESULTAT (Lengde, Tid, Ovelse_Id) values (?,?,?)");
+    			PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSRESULTAT (Lengde, Tid, Ovelse_Id, Treningsokt_id) values (?,?,?,?)");
         		stmt.setInt(1, lengde);
         		stmt.setInt(2, tid);
         		stmt.setInt(3, ovelse.getId());
+        		stmt.setInt(4, 1);
         		stmt.executeUpdate();
     	} catch(SQLException e) {
         	System.out.println(e);

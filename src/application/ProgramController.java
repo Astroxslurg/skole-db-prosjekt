@@ -148,10 +148,10 @@ public class ProgramController implements Initializable {
 	private void submitResult(){
 		if (resultat_ovelse_boks.getValue() != null) {
 			if (resultat_ovelse_boks.getValue().erStyrkeOvelse() == true) {
-				Database.insertStyrkeResult(resultat_ovelse_boks.getValue(), Integer.parseInt(resultat_styrke_belastning.getText()), Integer.parseInt(resultat_styrke_repetisjon.getText()), Integer.parseInt(resultat_styrke_sett.getText()));
+				Database.insertStyrkeResult(resultat_ovelse_boks.getValue(), Integer.parseInt(resultat_boks_belastning.getText()), Integer.parseInt(resultat_boks_repetisjoner.getText()), Integer.parseInt(resultat_boks_sett.getText()));
 			}
 			else {
-				Database.insertKondisjonResult(resultat_ovelse_boks.getValue(), Integer.parseInt(resultat_kondisjon_lengde.getText()), Integer.parseInt(resultat_kondisjon_tid.getText()));
+				Database.insertKondisjonResult(resultat_ovelse_boks.getValue(), Integer.parseInt(resultat_boks_lengde.getText()), Integer.parseInt(resultat_boks_tid.getText()));
 			}
 		}
 	}
