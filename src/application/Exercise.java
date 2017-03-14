@@ -18,6 +18,10 @@ public class Exercise {
 		this.beskrivelse = beskrivelse;
 		this.erStyrkeOvelse = type;
 	}
+	
+	public String toString() {
+		return navn;
+	}
 
 	public int getId() {
 		return id;
