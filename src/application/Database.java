@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.mysql.jdbc.Statement;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -77,7 +79,7 @@ public class Database {
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
     			PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSRESULTAT (Lengde, Tid, Ovelse_Id, Treningsokt_id) values (?,?,?,?)");
-        		stmt.setInt(1, lengde);
+    			stmt.setInt(1, lengde);
         		stmt.setInt(2, tid);
         		stmt.setInt(3, ovelse.getId());
         		stmt.setInt(4, 1);
@@ -89,6 +91,8 @@ public class Database {
     
     public static void insertStyrkeResult(Exercise ovelse, int belastning, int repetisjoner, int sett) {
     	try {
+    		//Insert superclass Result.
+    		insertResult();
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
     			PreparedStatement stmt = conn.prepareStatement("insert into STYRKERESULTAT (Ovelse_Id, Belastning, Repetisjoner, Sett) values (?,?,?,?)");
         		stmt.setInt(1, ovelse.getId());
@@ -96,6 +100,19 @@ public class Database {
         		stmt.setInt(3, repetisjoner);
         		stmt.setInt(4, sett);
         		stmt.executeUpdate();	
+    	} catch(SQLException e) {
+        	System.out.println(e);
+        }
+    }
+    
+    public static void insertResult() {
+    	try {
+    		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+    			PreparedStatement stmt = conn.prepareStatement("insert into RESULTAT () values ()", Statement.RETURN_GENERATED_KEYS);
+        		stmt.executeUpdate();
+        		ResultSet rs = stmt.getGeneratedKeys();
+        		int generatedKey = rs.getInt(0);
+        		System.out.println(generatedKey);
     	} catch(SQLException e) {
         	System.out.println(e);
         }
