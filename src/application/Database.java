@@ -29,13 +29,13 @@ public class Database {
         }
     }
     
-    public static void insertExercise(String Navn, String Beskrivelse, int Type) {
+    public static void insertExercise(Exercise ex) {
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
     		PreparedStatement stmt = conn.prepareStatement("insert into OVELSE (Navn, Beskrivelse, Type) values (?,?,?)");
-    		stmt.setString(1, Navn);
-    		stmt.setString(2, Beskrivelse);
-    		stmt.setInt(3, Type);
+    		stmt.setString(1, ex.getNavn());
+    		stmt.setString(2, ex.getBeskrivelse());
+    		stmt.setBoolean(3, ex.erStyrkeOvelse());
     		stmt.executeUpdate();
     	} catch(SQLException e) {
         	System.out.println(e);
@@ -70,7 +70,7 @@ public class Database {
     	}
     }
     
-    public static void insertResult(Exercise ovelse, int type, ) {
+    public static void insertResult(Exercise ovelse, int type) {
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
     		//If the exercise is a "kondisjon" exercise
