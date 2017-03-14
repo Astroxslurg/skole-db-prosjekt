@@ -94,11 +94,12 @@ public class Database {
     		//Insert superclass Result.
     		insertResult();
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
-    			PreparedStatement stmt = conn.prepareStatement("insert into STYRKERESULTAT (Ovelse_Id, Belastning, Repetisjoner, Sett) values (?,?,?,?)");
+    			PreparedStatement stmt = conn.prepareStatement("insert into STYRKERESULTAT (Ovelse_Id, Treningsokt_id, Belastning, Repetisjoner, Sett) values (?,?,?,?,?)");
         		stmt.setInt(1, ovelse.getId());
-        		stmt.setInt(2, belastning);
-        		stmt.setInt(3, repetisjoner);
-        		stmt.setInt(4, sett);
+        		stmt.setInt(2, 1);
+        		stmt.setInt(3, belastning);
+        		stmt.setInt(4, repetisjoner);
+        		stmt.setInt(5, sett);
         		stmt.executeUpdate();	
     	} catch(SQLException e) {
         	System.out.println(e);
@@ -108,11 +109,12 @@ public class Database {
     public static void insertResult() {
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
-    			PreparedStatement stmt = conn.prepareStatement("insert into RESULTAT () values ()", Statement.RETURN_GENERATED_KEYS);
-        		stmt.executeUpdate();
-        		ResultSet rs = stmt.getGeneratedKeys();
-        		int generatedKey = rs.getInt(0);
-        		System.out.println(generatedKey);
+    		PreparedStatement stmt = conn.prepareStatement("insert into RESULTAT () values ()", Statement.RETURN_GENERATED_KEYS);
+        	stmt.executeUpdate();
+        	ResultSet rs = stmt.getGeneratedKeys();
+        	rs.next();
+        	int generatedKey = rs.getInt(1);
+            System.out.println(generatedKey);
     	} catch(SQLException e) {
         	System.out.println(e);
         }
