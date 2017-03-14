@@ -76,23 +76,38 @@ public class Database {
     	}
     }
     
-    public static void insertKondisjonsMaal(int Lengde, int Tid, int Ovelse_id, Date Start_dato, Date Maal_dato) {
+    public static void insertKondisjonGoal(int lengde, int tid, int ovelse_id, Date start_dato, Date maal_dato){
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
-    		PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSMAAL (Lengde, Tid, Type, Ovelse_Id, Aktiv, Start_dato, Maal_dato) values (?,?,?,?,?,?,?)");
+    		PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSMAAL (Lengde, Tid, Ovelse_id, Aktiv, Start_dato, Maal_dato) values (?,?,?,?,?,?)");
     		stmt.setInt(1, lengde);
-        	stmt.setInt(2, tid);
-        	stmt.setInt(4, ovelse.getId());
-        	stmt.setInt(5, 1);
-        	stmt.executeUpdate();
+    		stmt.setInt(2, tid);
+    		stmt.setInt(3, ovelse_id);
+    		stmt.setBoolean(4, true);
+    		stmt.setDate(5, start_dato);
+    		stmt.setDate(6, maal_dato);
+    		stmt.executeUpdate();
     	} catch(SQLException e) {
         	System.out.println(e);
-        }
+    	}
     }
     
-    public static void insertStyrkeMaal(Belastning, Repetisjoner, Sett, Ovelse_id, Start_dato, Maal_dato) {
-    	
-    }
+    public static void insertStyrkeGoal(float belastning, int repetisjoner, int sett, int ovelse_id, Date start_dato, Date maal_dato){
+    	try {
+    		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+    		PreparedStatement stmt = conn.prepareStatement("insert into STYRKEMAAL (Belastning, Repetisjoner, Sett, Ovelse_id, Aktiv, Start_dato, Maal_dato) values (?,?,?,?,?,?,?)");
+    		stmt.setFloat(1, belastning);
+    		stmt.setInt(2, repetisjoner);
+    		stmt.setInt(3, sett);
+    		stmt.setInt(4, ovelse_id);
+    		stmt.setBoolean(5, true);
+    		stmt.setDate(6, start_dato);
+    		stmt.setDate(7, maal_dato);
+    		stmt.executeUpdate();
+    	} catch(SQLException e) {
+        	System.out.println(e);
+    	}
+}
     
     public static void insertKondisjonResult(Exercise ovelse, int lengde, int tid) {
     	try {
