@@ -70,7 +70,7 @@ public class Database {
     	}
     }
     
-    public static void insertResult(Exercise ovelse, int type, ) {
+    public static void insertResult(Exercise ovelse, int type) {
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
     		//If the exercise is a "kondisjon" exercise
