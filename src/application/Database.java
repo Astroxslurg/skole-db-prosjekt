@@ -77,13 +77,16 @@ public class Database {
     
     public static void insertKondisjonResult(Exercise ovelse, int lengde, int tid) {
     	try {
+    		//Insert superclass Result.
+    		int resultKey = insertResult();
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
-    			PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSRESULTAT (Lengde, Tid, Ovelse_Id, Treningsokt_id) values (?,?,?,?)");
-    			stmt.setInt(1, lengde);
-        		stmt.setInt(2, tid);
-        		stmt.setInt(3, ovelse.getId());
-        		stmt.setInt(4, 1);
-        		stmt.executeUpdate();
+    		PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSRESULTAT (Id, Lengde, Tid, Ovelse_Id, Treningsokt_id) values (?,?,?,?,?)");
+    		stmt.setInt(1, resultKey);
+    		stmt.setInt(2, lengde);
+        	stmt.setInt(3, tid);
+        	stmt.setInt(4, ovelse.getId());
+        	stmt.setInt(5, 1);
+        	stmt.executeUpdate();
     	} catch(SQLException e) {
         	System.out.println(e);
         }
@@ -92,32 +95,36 @@ public class Database {
     public static void insertStyrkeResult(Exercise ovelse, int belastning, int repetisjoner, int sett) {
     	try {
     		//Insert superclass Result.
-    		insertResult();
+    		int resultKey = insertResult();
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
-    			PreparedStatement stmt = conn.prepareStatement("insert into STYRKERESULTAT (Ovelse_Id, Treningsokt_id, Belastning, Repetisjoner, Sett) values (?,?,?,?,?)");
-        		stmt.setInt(1, ovelse.getId());
-        		stmt.setInt(2, 1);
-        		stmt.setInt(3, belastning);
-        		stmt.setInt(4, repetisjoner);
-        		stmt.setInt(5, sett);
+    			PreparedStatement stmt = conn.prepareStatement("insert into STYRKERESULTAT (Id, Ovelse_Id, Treningsokt_id, Belastning, Repetisjoner, Sett) values (?,?,?,?,?,?)");
+    			stmt.setInt(1, resultKey);
+        		stmt.setInt(2, ovelse.getId());
+        		stmt.setInt(3, 1);
+        		stmt.setInt(4, belastning);
+        		stmt.setInt(5, repetisjoner);
+        		stmt.setInt(6, sett);
         		stmt.executeUpdate();	
     	} catch(SQLException e) {
         	System.out.println(e);
         }
     }
     
-    public static void insertResult() {
+    public static int insertResult() {
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
-    		PreparedStatement stmt = conn.prepareStatement("insert into RESULTAT () values ()", Statement.RETURN_GENERATED_KEYS);
-        	stmt.executeUpdate();
-        	ResultSet rs = stmt.getGeneratedKeys();
-        	rs.next();
-        	int generatedKey = rs.getInt(1);
-            System.out.println(generatedKey);
+    			PreparedStatement stmt = conn.prepareStatement("insert into RESULTAT () values ()", Statement.RETURN_GENERATED_KEYS);
+        		stmt.executeUpdate();
+        		ResultSet rs = stmt.getGeneratedKeys();
+        		if (rs.next()) {
+        			return rs.getInt(1);
+        		} else {
+        			System.out.println("rs empty");
+        		}
     	} catch(SQLException e) {
         	System.out.println(e);
         }
+    	return -1;
     }
     
 }
