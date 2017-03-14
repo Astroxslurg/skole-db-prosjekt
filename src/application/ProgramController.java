@@ -123,11 +123,13 @@ public class ProgramController {
 	
 	@FXML
 	private void submitExercise(){
-		int type = 1;
+		boolean type = true;
 		if (ovelse_kondisjon_knapp.isSelected()) {
-			type = 0;
+			type = false;
 		}
-		Database.insertExercise(ovelse_navn.getText(), ovelse_beskrivelse.getText(), type);
+		
+		Exercise ex = new Exercise(ovelse_navn.getText(), ovelse_beskrivelse.getText(), type);
+//		Database.insertExercise(ovelse_navn.getText(), ovelse_beskrivelse.getText(), type);
 	}
 	
 	@FXML

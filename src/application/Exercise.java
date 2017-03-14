@@ -4,19 +4,19 @@ public class Exercise {
 	private int id = -1;
 	private String navn;
 	private String beskrivelse;
-	private boolean type;
+	private boolean erStyrkeOvelse;
 	
 	Exercise(String navn, String beskrivelse, boolean type) {
 		this.navn = navn;
 		this.beskrivelse = beskrivelse;
-		this.type = type;
+		this.erStyrkeOvelse = type;
 	}
 	
 	Exercise(int id, String navn, String beskrivelse, boolean type) {
 		this.id = id;
 		this.navn = navn;
 		this.beskrivelse = beskrivelse;
-		this.type = type;
+		this.erStyrkeOvelse = type;
 	}
 
 	public int getId() {
@@ -43,12 +43,12 @@ public class Exercise {
 		this.beskrivelse = beskrivelse;
 	}
 
-	public boolean isType() {
-		return type;
+	public boolean erStyrkeOvelse() {
+		return erStyrkeOvelse;
 	}
 
-	public void setType(boolean type) {
-		this.type = type;
+	public void setErStyrkeOvelse(boolean type) {
+		this.erStyrkeOvelse = type;
 	}
 
 }
