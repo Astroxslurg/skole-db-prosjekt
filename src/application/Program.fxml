@@ -191,7 +191,7 @@
                         <TextField fx:id="resultat_boks_tid" layoutX="183.0" layoutY="280.0" />
                         <TextField fx:id="resultat_boks_sett" layoutX="183.0" layoutY="337.0" visible="false" />
                         <Button fx:id="resultat_submit" layoutX="311.0" layoutY="401.0" mnemonicParsing="false" onAction="#submitResult" text="Legg til resultat" />
-                        <ComboBox fx:id="ovelse_boks" layoutX="180.0" layoutY="84.0" prefWidth="150.0" promptText="Øvelse" />
+                        <ComboBox fx:id="resultat_ovelse_boks" layoutX="180.0" layoutY="84.0" prefWidth="150.0" promptText="Øvelse" />
                      </children>
                   </AnchorPane>
               </content>
