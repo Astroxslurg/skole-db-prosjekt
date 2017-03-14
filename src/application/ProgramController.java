@@ -118,9 +118,10 @@ public class ProgramController implements Initializable {
 		resultat_styrke_repetisjon.setVisible(true);
 		resultat_styrke_sett.setVisible(true);
 		resultat_boks_lengde.setVisible(false);
+		resultat_boks_tid.setVisible(false);
+		resultat_boks_tid.setVisible(false);
 		resultat_kondisjon_tid.setVisible(false);
 		resultat_kondisjon_lengde.setVisible(false);
-		resultat_kondisjon_tid.setVisible(false);
 	}
 	
 	private void displayKondisjonLabelsAndTextFeields() {
@@ -150,7 +151,12 @@ public class ProgramController implements Initializable {
 	@FXML
 	private void submitResult(){
 		if (resultat_ovelse_boks.getValue() != null) {
-			
+			if (resultat_ovelse_boks.getValue().erStyrkeOvelse() == true) {
+				Database.insertStyrkeResult(resultat_ovelse_boks.getValue(), Integer.parseInt(resultat_boks_belastning.getText()), Integer.parseInt(resultat_boks_repetisjoner.getText()), Integer.parseInt(resultat_boks_sett.getText()));
+			}
+			else {
+				Database.insertKondisjonResult(resultat_ovelse_boks.getValue(), Integer.parseInt(resultat_boks_lengde.getText()), Integer.parseInt(resultat_boks_tid.getText()));
+			}
 		}
 	}
 	// Lengde, Tid, Ovelse_id, Start_dato, Maal_dato
