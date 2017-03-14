@@ -1,9 +1,9 @@
 # Treningsdagbok
 
 1. [Brukergrensesnitt](#brukergrensesnitt)
-  1.[Legge til Øvelse](#legge-til-øvelse)
-  2.[Sette et mål](#sette-et-mål)
-  3.[Lagre et resultat](#lagre-et-resultat)
+  1. [Legge til Øvelse](#legge-til-øvelse)
+  2. [Sette et mål](#sette-et-mål)
+  3. [Lagre et resultat](#lagre-et-resultat)
 
 ## Brukergrensesnitt
 
