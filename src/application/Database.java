@@ -1,6 +1,7 @@
 package application;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -73,6 +74,24 @@ public class Database {
     	} catch(SQLException e) {
         	System.out.println(e);
     	}
+    }
+    
+    public static void insertKondisjonsMaal(int Lengde, int Tid, int Ovelse_id, Date Start_dato, Date Maal_dato) {
+    	try {
+    		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+    		PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSMAAL (Lengde, Tid, Type, Ovelse_Id, Aktiv, Start_dato, Maal_dato) values (?,?,?,?,?,?,?)");
+    		stmt.setInt(1, lengde);
+        	stmt.setInt(2, tid);
+        	stmt.setInt(4, ovelse.getId());
+        	stmt.setInt(5, 1);
+        	stmt.executeUpdate();
+    	} catch(SQLException e) {
+        	System.out.println(e);
+        }
+    }
+    
+    public static void insertStyrkeMaal(Belastning, Repetisjoner, Sett, Ovelse_id, Start_dato, Maal_dato) {
+    	
     }
     
     public static void insertKondisjonResult(Exercise ovelse, int lengde, int tid) {
