@@ -55,7 +55,7 @@ public class ProgramController {
 	@FXML Label resultat_styrke_repetisjon;
 	@FXML Label resultat_styrke_sett;
 	@FXML Button resultat_submit;
-	@FXML ComboBox ovelse_boks;
+	@FXML ComboBox<Exercise> ovelse_boks;
 	
 	
 	
@@ -136,7 +136,9 @@ public class ProgramController {
 	
 	@FXML
 	private void submitResult(){
-		
+		if (ovelse_boks.getValue() != null) {
+			
+		}
 	}
 	
 	private void submitGoal(){
