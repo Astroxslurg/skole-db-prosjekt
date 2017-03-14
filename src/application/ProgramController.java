@@ -3,6 +3,7 @@ package application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
@@ -54,6 +55,7 @@ public class ProgramController {
 	@FXML Label resultat_styrke_repetisjon;
 	@FXML Label resultat_styrke_sett;
 	@FXML Button resultat_submit;
+	@FXML ComboBox ovelse_boks;
 	
 	
 	
