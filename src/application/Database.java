@@ -69,25 +69,28 @@ public class Database {
     	}
     }
     
-    public static void insertResult(Exercise ovelse, int type) {
+    public static void insertKondisjonResult(Exercise ovelse, int lengde, int tid) {
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
-    		//If the exercise is a "kondisjon" exercise
-    		if (type == 0) {
-    			PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSRESULTAT (Lengde, Tid, Ovelse_id) values (?,?,?)");
-        		stmt.setString(1, Navn);
-        		stmt.setString(2, Beskrivelse);
-        		stmt.setInt(3, Type);
-        		stmt.executeUpdate();	
-    		} 
-    		//If the exercise is a "styrke" exercise
-    		else if (type == 1) {
-    			PreparedStatement stmt = conn.prepareStatement("insert into OVELSE (Navn, Beskrivelse, Type) values (?,?,?)");
-        		stmt.setString(1, Navn);
-        		stmt.setString(2, Beskrivelse);
-        		stmt.setInt(3, Type);
+    			PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSRESULTAT (Lengde, Tid, Ovelse_Id) values (?,?,?)");
+        		stmt.setInt(1, lengde);
+        		stmt.setInt(2, tid);
+        		stmt.setInt(3, ovelse.getId());
         		stmt.executeUpdate();
-    		}
+    	} catch(SQLException e) {
+        	System.out.println(e);
+        }
+    }
+    
+    public static void insertStyrkeResult(Exercise ovelse, int belastning, int repetisjoner, int sett) {
+    	try {
+    		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+    			PreparedStatement stmt = conn.prepareStatement("insert into STYRKERESULTAT (Ovelse_Id, Belastning, Repetisjoner, Sett) values (?,?,?,?)");
+        		stmt.setInt(1, ovelse.getId());
+        		stmt.setInt(2, belastning);
+        		stmt.setInt(3, repetisjoner);
+        		stmt.setInt(4, sett);
+        		stmt.executeUpdate();	
     	} catch(SQLException e) {
         	System.out.println(e);
         }
