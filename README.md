@@ -6,12 +6,13 @@
   * [Sette et mål](#sette-et-mål)
   * [Lagre et resultat](#lagre-et-resultat)
 - [Limitasjoner](#limitasjoner)
+
 ## Usecases implementert
 
 Vi har implementert følgende usecases:
- - Legge til en ny øvelse
- - Sette seg et mål knyttet til en øvelse
- - Lagre et resultat knyttet til en øvelse
+ - Legge til en ny øvelse.
+ - Sette seg et mål knyttet til en øvelse.
+ - Lagre et resultat knyttet til en øvelse.
 
 ## Brukergrensesnitt
 
@@ -19,19 +20,19 @@ Brukergrensesnittet består av tre faner: Øvelse, Mål og Resultat. Disse fanen
 
 ### Legge til øvelse
 
-Man legger til en ny øvelse ved å fylle ut skjemaet i øvelse-fanen og trykke på knappen kalt "Legg til øvelse"
+Man legger til en ny øvelse ved å fylle ut skjemaet i øvelse-fanen og trykke på knappen kalt "Legg til øvelse". Den blir deretter lagret i databasen.
 
 ### Sette et mål
 
-Velg først hvilken øvelse du skal sette et mål for.
-Fyll så ut skjemaet og trykk "Legg til Mål" for å legge til målet.
+Velg først hvilken øvelse du skal sette et mål for. Fyll så ut skjemaet og trykk "Legg til Mål" for å legge til målet i databasen.
 
 ### Lagre et resultat
 
-Velg hvilken øvelse som har blitt utfylt og fyll så ut det korresponderende skjemaet. Resultatet blir lagt til når man trykker på "Legg til resultat"
+Velg hvilken øvelse som har blitt utfylt og fyll så ut det korresponderende skjemaet. Resultatet blir lagt til i databasen når man trykker på "Legg til resultat".
 
 ## Begrensninger
+
 Gitt at vi har begrenset oss til å kun implementere tre use cases, vil applikasjonen ha flere begrensninger. Her er de mest sentrale:
 - Man kan ikke velge gruppe for øvelsen, siden gruppetabellen ikke har blitt implementert.
 - Man antar at brukeren ikke har koblet til noen pulsklokke, og har valgt å se helt bort i fra pulsverdier for nå.
-- Man kan ikke legge til en belastning høyere enn 99.9, da vi kke har implementert kompatibilitet for veldig sterke folk enda.
+- Man kan ikke legge til en belastning høyere enn 99.9, da vi kke har implementert kompatibilitet for veldig sterke brukere enda.
