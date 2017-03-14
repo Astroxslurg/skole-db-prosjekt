@@ -6,6 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class Database {
 	private static String mysqlAddr = "jdbc:mysql://mysql.stud.ntnu.no:3306/jonaseth_tdt4145database?allowMultiQueries=true";
     private static String mysqlUser = "jonaseth_tdt4145";
@@ -37,6 +40,23 @@ public class Database {
     	} catch(SQLException e) {
         	System.out.println(e);
         }
+    }
+    
+    public static void getExercises() {
+    	try {
+    		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+    		PreparedStatement stmt = conn.prepareStatement("select * from OVELSE");
+    		ResultSet rs = stmt.executeQuery();
+    		
+    		ObservableList exerciseList = FXCollections.observableArrayList();
+    		
+    		while(rs.next()) {
+    			System.out.println(rs.getString("Navn"));
+    			System.out.println(rs.getString("Beskrivelse"));
+    		}
+    	} catch(SQLException e) {
+    		System.out.println(e);
+    	}
     }
     
     /*  FUNKSJON FOR � LEGGE TIL I DATABASEN
