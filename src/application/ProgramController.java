@@ -89,6 +89,38 @@ public class ProgramController {
 	}
 	
 	@FXML
+	void styrkeButton1IsActivatedInResultater(Event event) {
+		if (!(styrke_knapp1.isDisabled())){
+			resultat_boks_belastning.setVisible(true);
+			resultat_boks_repetisjoner.setVisible(true);
+			resultat_boks_sett.setVisible(true);
+			resultat_styrke_belastning.setVisible(true);
+			resultat_styrke_repetisjon.setVisible(true);
+			resultat_styrke_sett.setVisible(true);
+			resultat_boks_lengde.setVisible(false);
+			resultat_kondisjon_tid.setVisible(false);
+			resultat_kondisjon_lengde.setVisible(false);
+			resultat_kondisjon_tid.setVisible(false);
+		}	
+	}
+	
+	@FXML
+	void kondisjonButton1IsActivatedInResultater(Event event) {
+		if (!(kondisjon_knapp1.isDisabled())){
+			resultat_boks_belastning.setVisible(false);
+			resultat_boks_repetisjoner.setVisible(false);
+			resultat_boks_sett.setVisible(false);
+			resultat_styrke_belastning.setVisible(false);
+			resultat_styrke_repetisjon.setVisible(false);
+			resultat_styrke_sett.setVisible(false);
+			resultat_boks_lengde.setVisible(true);
+			resultat_boks_tid.setVisible(true);
+			resultat_kondisjon_lengde.setVisible(true);
+			resultat_kondisjon_tid.setVisible(true);
+		}	
+	}
+	
+	@FXML
 	private void submitExercise(){
 		int type = 1;
 		if (ovelse_kondisjon_knapp.isSelected()) {
