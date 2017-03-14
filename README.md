@@ -1,9 +1,9 @@
 # Treningsdagbok
 
 1. [Brukergrensesnitt](#brukergrensesnitt)
-  1. [Legge til øvelse](#legge-til-ovelse)
-  2. [Sette et mål](#sette-et-maal)
-  3. [Lagre et resultat](#lagre-et-resultat)
+  i. [Legge til øvelse](#legge-til-ovelse)
+  ii. [Sette et mål](#sette-et-maal)
+  iii. [Lagre et resultat](#lagre-et-resultat)
 2. [Dorull ipsum amen](#dorull-ipsum-amen)
 
 ## Brukergrensesnitt
