@@ -79,26 +79,26 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label text="Startdato:" GridPane.rowIndex="1">
+                              <Label fx:id="startdatoText" text="Startdato:" visible="false" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="21.0" />
                                  </font>
                               </Label>
-                              <Label text="Måldato:" GridPane.rowIndex="2">
+                              <Label fx:id="maaldatoText" text="Måldato:" visible="false" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="21.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="startdato" prefHeight="31.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <DatePicker fx:id="maaldato" prefHeight="31.0" prefWidth="222.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField fx:id="kondisjon_boks_lengde" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField fx:id="kondisjon_boks_tid" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Label fx:id="kondisjon_lengde" text="Lengde:" GridPane.rowIndex="3">
+                              <DatePicker fx:id="startdato" prefHeight="31.0" prefWidth="215.0" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="maaldato" prefHeight="31.0" prefWidth="222.0" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="kondisjon_boks_lengde" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="kondisjon_boks_tid" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="kondisjon_lengde" text="Lengde:" visible="false" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="21.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="kondisjon_tid" text="Tid:" GridPane.rowIndex="4">
+                              <Label fx:id="kondisjon_tid" text="Tid:" visible="false" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="21.0" />
                                  </font>
@@ -126,7 +126,7 @@
                                     <Font size="21.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="maal_ovelse" prefHeight="31.0" prefWidth="280.0" promptText="Øvelser" GridPane.columnIndex="1" />
+                              <ComboBox fx:id="maal_ovelse" onAction="#checkSelectedExerciseMaal" prefHeight="31.0" prefWidth="280.0" promptText="Øvelser" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
                         <Label layoutX="193.0" text="Mål">
@@ -134,7 +134,7 @@
                               <Font name="Garuda" size="39.0" />
                            </font>
                         </Label>
-                        <Button fx:id="legg_til_maal_btn" layoutX="345.0" layoutY="415.0" mnemonicParsing="false" text="Legg til Mål" />
+                        <Button fx:id="legg_til_maal_btn" layoutX="345.0" layoutY="415.0" mnemonicParsing="false" onAction="#submitGoal" text="Legg til Mål" />
                      </children>
                   </AnchorPane>
             </content>
