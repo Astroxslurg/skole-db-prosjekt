@@ -118,9 +118,10 @@ public class ProgramController implements Initializable {
 		resultat_styrke_repetisjon.setVisible(true);
 		resultat_styrke_sett.setVisible(true);
 		resultat_boks_lengde.setVisible(false);
+		resultat_boks_tid.setVisible(false);
+		resultat_boks_tid.setVisible(false);
 		resultat_kondisjon_tid.setVisible(false);
 		resultat_kondisjon_lengde.setVisible(false);
-		resultat_kondisjon_tid.setVisible(false);
 	}
 	
 	private void displayKondisjonLabelsAndTextFeields() {
