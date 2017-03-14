@@ -142,6 +142,9 @@ public class ProgramController implements Initializable {
 	
 	@FXML
 	private void submitResult(){
+		if (resultat_ovelse_boks.getValue() != null) {
+			
+		}
 	}
 	
 	private void submitGoal(){

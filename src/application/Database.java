@@ -64,12 +64,11 @@ public class Database {
     }
     		
     public static void insertGoal(){
-    	try{
+    	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
     		PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSMAAL (Lengde, Tid, Type) values (?,?,?)");
-    		
     		stmt.executeUpdate();
-    	}catch(SQLException e) {
+    	} catch(SQLException e) {
         	System.out.println(e);
     	}
     }
