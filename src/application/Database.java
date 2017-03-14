@@ -105,17 +105,21 @@ public class Database {
         }
     }
     
-    public static void insertResult() {
+    public static int insertResult() {
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
     			PreparedStatement stmt = conn.prepareStatement("insert into RESULTAT () values ()", Statement.RETURN_GENERATED_KEYS);
         		stmt.executeUpdate();
         		ResultSet rs = stmt.getGeneratedKeys();
-        		int generatedKey = rs.getInt(0);
-        		System.out.println(generatedKey);
+        		if (rs.next()) {
+        			return rs.getInt(1);
+        		} else {
+        			System.out.println("rs empty");
+        		}
     	} catch(SQLException e) {
         	System.out.println(e);
         }
+    	return -1;
     }
     
 }
