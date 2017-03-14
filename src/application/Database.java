@@ -60,17 +60,16 @@ public class Database {
     }
     		
     public static void insertGoal(){
-    	try{
+    	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
     		PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSMAAL (Lengde, Tid, Type) values (?,?,?)");
-    		
     		stmt.executeUpdate();
-    	}catch(SQLException e) {
+    	} catch(SQLException e) {
         	System.out.println(e);
     	}
     }
     
-    public static void insertResult(String ovelse, int type, ) {
+    public static void insertResult(String ovelse, int type) {
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
     		//If the exercise is a "kondisjon" exercise
