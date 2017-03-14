@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -42,21 +43,24 @@ public class Database {
         }
     }
     
-    public static void getExercises() {
+    public static ObservableList<Exercise> getExercises() {
     	try {
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
     		PreparedStatement stmt = conn.prepareStatement("select * from OVELSE");
     		ResultSet rs = stmt.executeQuery();
     		
-    		ObservableList exerciseList = FXCollections.observableArrayList();
+    		ObservableList<Exercise> exerciseList = FXCollections.observableArrayList();
     		
     		while(rs.next()) {
-    			System.out.println(rs.getString("Navn"));
-    			System.out.println(rs.getString("Beskrivelse"));
+    			Exercise ex = new Exercise (rs.getInt("Id"), rs.getString("Navn"), rs.getString("Beskrivelse"), rs.getBoolean("Type"));
+    			exerciseList.add(ex);
     		}
+    		return exerciseList;
+    		
     	} catch(SQLException e) {
     		System.out.println(e);
     	}
+    	return null;
     }
     		
     public static void insertGoal(){

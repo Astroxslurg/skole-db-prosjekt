@@ -1,7 +1,13 @@
 package application;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -12,7 +18,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
-public class ProgramController {
+public class ProgramController implements Initializable {
 	
 	
 	@FXML RadioButton ovelse_styrke_knapp;
@@ -92,35 +98,39 @@ public class ProgramController {
 	}
 	
 	@FXML
-	void styrkeButton1IsActivatedInResultater(Event event) {
-		if (!(styrke_knapp1.isDisabled())){
-			resultat_boks_belastning.setVisible(true);
-			resultat_boks_repetisjoner.setVisible(true);
-			resultat_boks_sett.setVisible(true);
-			resultat_styrke_belastning.setVisible(true);
-			resultat_styrke_repetisjon.setVisible(true);
-			resultat_styrke_sett.setVisible(true);
-			resultat_boks_lengde.setVisible(false);
-			resultat_kondisjon_tid.setVisible(false);
-			resultat_kondisjon_lengde.setVisible(false);
-			resultat_kondisjon_tid.setVisible(false);
-		}	
+	void checkSelectedExercise(Event event) {
+		Exercise selectedExercise = (Exercise) resultat_ovelse_boks.getValue();
+		if (selectedExercise.erStyrkeOvelse() == true) {
+			displayStyrkeLabelsAndTextFields();
+		} else {
+			displayKondisjonLabelsAndTextFeields();
+		}
 	}
 	
-	@FXML
-	void kondisjonButton1IsActivatedInResultater(Event event) {
-		if (!(kondisjon_knapp1.isDisabled())){
-			resultat_boks_belastning.setVisible(false);
-			resultat_boks_repetisjoner.setVisible(false);
-			resultat_boks_sett.setVisible(false);
-			resultat_styrke_belastning.setVisible(false);
-			resultat_styrke_repetisjon.setVisible(false);
-			resultat_styrke_sett.setVisible(false);
-			resultat_boks_lengde.setVisible(true);
-			resultat_boks_tid.setVisible(true);
-			resultat_kondisjon_lengde.setVisible(true);
-			resultat_kondisjon_tid.setVisible(true);
-		}	
+	void displayStyrkeLabelsAndTextFields() {
+		resultat_boks_belastning.setVisible(true);
+		resultat_boks_repetisjoner.setVisible(true);
+		resultat_boks_sett.setVisible(true);
+		resultat_styrke_belastning.setVisible(true);
+		resultat_styrke_repetisjon.setVisible(true);
+		resultat_styrke_sett.setVisible(true);
+		resultat_boks_lengde.setVisible(false);
+		resultat_kondisjon_tid.setVisible(false);
+		resultat_kondisjon_lengde.setVisible(false);
+		resultat_kondisjon_tid.setVisible(false);
+	}
+	
+	private void displayKondisjonLabelsAndTextFeields() {
+		resultat_boks_belastning.setVisible(false);
+		resultat_boks_repetisjoner.setVisible(false);
+		resultat_boks_sett.setVisible(false);
+		resultat_styrke_belastning.setVisible(false);
+		resultat_styrke_repetisjon.setVisible(false);
+		resultat_styrke_sett.setVisible(false);
+		resultat_boks_lengde.setVisible(true);
+		resultat_boks_tid.setVisible(true);
+		resultat_kondisjon_lengde.setVisible(true);
+		resultat_kondisjon_tid.setVisible(true);	
 	}
 	
 	@FXML
@@ -148,6 +158,14 @@ public class ProgramController {
 	
 	private void submitGoal(){
 		startdato.getValue();
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		ObservableList<Exercise> exerciseList = Database.getExercises();
+		for (Exercise element : exerciseList) {
+			resultat_ovelse_boks.setItems(exerciseList);
+		}
 	}
 	
 }
