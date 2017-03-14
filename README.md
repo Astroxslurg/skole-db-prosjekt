@@ -5,7 +5,7 @@
   * [Legge til øvelse](#legge-til-øvelse)
   * [Sette et mål](#sette-et-mål)
   * [Lagre et resultat](#lagre-et-resultat)
-
+- [Limitasjoner](#limitasjoner)
 ## Usecases implementert
 
 Vi har implementert følgende usecases:
@@ -29,3 +29,8 @@ Fyll så ut skjemaet og trykk "Legg til Mål" for å legge til målet.
 ### Lagre et resultat
 
 Velg hvilken øvelse som har blitt utfylt og fyll så ut det korresponderende skjemaet. Resultatet blir lagt til når man trykker på "Legg til resultat"
+
+## limitasjoner
+
+- Man kan ikke velge gruppe for øvelsen, siden gruppetabellen ikke har blitt implementert.
+- Man antar at brukeren ikke har koblet til noen pulsklokke, og har valgt å se helt bort i fra pulsverdier for nå.
