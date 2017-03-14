@@ -39,6 +39,17 @@ public class Database {
         }
     }
     
+    public static void insertGoal(){
+    	try{
+    		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+    		PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSMAAL (Lengde, Tid, Type) values (?,?,?)");
+    		
+    		stmt.executeUpdate();
+    	}catch(SQLException e) {
+        	System.out.println(e);
+    	}
+    }
+    
     /*  FUNKSJON FOR � LEGGE TIL I DATABASEN
     public static void createTopic(Topic topic){
     	try{

@@ -128,4 +128,10 @@ public class ProgramController {
 		}
 		Database.insertExercise(ovelse_navn.getText(), ovelse_beskrivelse.getText(), type);
 	}
+	
+	@FXML
+	private void submitGoal(){
+		startdato.getValue();
+	}
+	
 }
