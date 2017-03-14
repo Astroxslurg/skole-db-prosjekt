@@ -89,12 +89,24 @@ public class Database {
     
     public static void insertStyrkeResult(Exercise ovelse, int belastning, int repetisjoner, int sett) {
     	try {
+    		insertResult();
     		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
     			PreparedStatement stmt = conn.prepareStatement("insert into STYRKERESULTAT (Ovelse_Id, Belastning, Repetisjoner, Sett) values (?,?,?,?)");
         		stmt.setInt(1, ovelse.getId());
         		stmt.setInt(2, belastning);
         		stmt.setInt(3, repetisjoner);
         		stmt.setInt(4, sett);
+        		stmt.executeUpdate();	
+    	} catch(SQLException e) {
+        	System.out.println(e);
+        }
+    }
+    
+    public static void insertResult() {
+    	try {
+    		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+    			PreparedStatement stmt = conn.prepareStatement("insert into RESULTAT () values ()");
+        		
         		stmt.executeUpdate();	
     	} catch(SQLException e) {
         	System.out.println(e);
