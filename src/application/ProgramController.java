@@ -40,6 +40,20 @@ public class ProgramController {
 	@FXML Label kondisjon_tid;
 	@FXML Button legg_til_maal_btn;
 	
+	@FXML RadioButton styrke_knapp1;
+	@FXML RadioButton kondisjon_knapp1;
+	@FXML ToggleGroup resultat_radio;
+	@FXML TextField resultat_boks_belastning;
+	@FXML TextField resultat_boks_lengde;
+	@FXML TextField resultat_boks_repetisjoner;
+	@FXML TextField resultat_boks_tid;
+	@FXML TextField resultat_boks_sett;
+	@FXML Label resultat_kondisjon_lengde;
+	@FXML Label resultat_kondisjon_tid;
+	@FXML Label resultat_styrke_belastning;
+	@FXML Label resultat_styrke_repetisjon;
+	@FXML Label resultat_styrke_sett;
+	
 	
 	
 	@FXML
@@ -76,7 +90,11 @@ public class ProgramController {
 	
 	@FXML
 	private void submitExercise(){
-		Database.insertExercise("Franskpress", "Ligg på ryggen, hold ei stang med vekter med knokene mot deg og løft fra hode og opp bare med bruk av triceps", 1);
+		int type = 1;
+		if (ovelse_kondisjon_knapp.isSelected()) {
+			type = 0;
+		}
+		Database.insertExercise(ovelse_navn.getText(), ovelse_beskrivelse.getText(), type);
 	}
 	
 	@FXML
