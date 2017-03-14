@@ -53,6 +53,7 @@ public class ProgramController {
 	@FXML Label resultat_styrke_belastning;
 	@FXML Label resultat_styrke_repetisjon;
 	@FXML Label resultat_styrke_sett;
+	@FXML Button resultat_submit;
 	
 	
 	
@@ -95,5 +96,10 @@ public class ProgramController {
 			type = 0;
 		}
 		Database.insertExercise(ovelse_navn.getText(), ovelse_beskrivelse.getText(), type);
+	}
+	
+	@FXML
+	private void submitResult(){
+		
 	}
 }
