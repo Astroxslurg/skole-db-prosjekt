@@ -76,7 +76,12 @@ public class ProgramController {
 	
 	@FXML
 	private void submitExercise(){
-		
 		Database.insertExercise("Franskpress", "Ligg på ryggen, hold ei stang med vekter med knokene mot deg og løft fra hode og opp bare med bruk av triceps", 1);
 	}
+	
+	@FXML
+	private void submitGoal(){
+		startdato.getValue();
+	}
+	
 }
