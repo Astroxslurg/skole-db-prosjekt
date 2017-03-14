@@ -40,12 +40,15 @@ public class ProgramController implements Initializable {
 	@FXML DatePicker startdato;
 	@FXML DatePicker maaldato;
 	@FXML DatePicker naddato;
+	@FXML Label maaldatoText;
+	@FXML Label startdatoText;
 	@FXML Label styrke_belastning;
 	@FXML Label styrke_repetisjoner;
 	@FXML Label styrke_sett;
 	@FXML Label kondisjon_lengde;
 	@FXML Label kondisjon_tid;
 	@FXML Button legg_til_maal_btn;
+	@FXML ComboBox<Exercise> maal_ovelse;
 	
 	@FXML RadioButton styrke_knapp1;
 	@FXML RadioButton kondisjon_knapp1;
@@ -156,15 +159,72 @@ public class ProgramController implements Initializable {
 		}
 	}
 	
+	@FXML
 	private void submitGoal(){
-		startdato.getValue();
+		System.out.println(maal_ovelse.getValue().getId());
+		System.out.println(startdato.getValue());
+		System.out.println(maaldato.getValue());
+		if(maal_ovelse.getValue().erStyrkeOvelse()){
+			System.out.println(styrke_boks_belastning);
+			System.out.println(styrke_boks_repetisjoner);
+			System.out.println(styrke_boks_repetisjoner);
+		}else{
+			System.out.println(kondisjon_boks_lengde.getText());
+			System.out.println(kondisjon_boks_tid.getText());
+		}
 	}
-
+	
+	private void displayStyrkeMaal(){
+		styrke_boks_belastning.setVisible(true);
+		styrke_boks_repetisjoner.setVisible(true);
+		styrke_boks_sett.setVisible(true);
+		kondisjon_boks_lengde.setVisible(false);
+		kondisjon_boks_tid.setVisible(false);
+		startdato.setVisible(true);
+		maaldato.setVisible(true);
+		maaldatoText.setVisible(true);
+		startdatoText.setVisible(true);
+		styrke_belastning.setVisible(true);
+		styrke_repetisjoner.setVisible(true);
+		styrke_sett.setVisible(true);
+		kondisjon_lengde.setVisible(false);
+		kondisjon_tid.setVisible(false);
+	}
+	
+	private void displayKondisjonMaal(){
+		styrke_boks_belastning.setVisible(false);
+		styrke_boks_repetisjoner.setVisible(false);
+		styrke_boks_sett.setVisible(false);
+		kondisjon_boks_lengde.setVisible(true);
+		kondisjon_boks_tid.setVisible(true);
+		startdato.setVisible(true);
+		maaldato.setVisible(true);
+		maaldatoText.setVisible(true);
+		startdatoText.setVisible(true);
+		styrke_belastning.setVisible(false);
+		styrke_repetisjoner.setVisible(false);
+		styrke_sett.setVisible(false);
+		kondisjon_lengde.setVisible(true);
+		kondisjon_tid.setVisible(true);
+	}
+	
+	
+	@FXML
+	private void checkSelectedExerciseMaal(Event event) {
+		Exercise selectedExercise = (Exercise) maal_ovelse.getValue();
+		if (selectedExercise.erStyrkeOvelse()) {
+			displayStyrkeMaal();
+		} else {
+			displayKondisjonMaal();
+		}
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		ObservableList<Exercise> exerciseList = Database.getExercises();
 		for (Exercise element : exerciseList) {
 			resultat_ovelse_boks.setItems(exerciseList);
+			maal_ovelse.setItems(exerciseList);
 		}
 	}
 	
