@@ -1,7 +1,13 @@
 package application;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -12,7 +18,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
-public class ProgramController {
+public class ProgramController implements Initializable {
 	
 	
 	@FXML RadioButton ovelse_styrke_knapp;
@@ -147,6 +153,14 @@ public class ProgramController {
 	
 	private void submitGoal(){
 		startdato.getValue();
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		ObservableList<Exercise> exerciseList = Database.getExercises();
+		for (Exercise element : exerciseList) {
+			resultat_ovelse_boks.setItems(exerciseList);
+		}
 	}
 	
 }
