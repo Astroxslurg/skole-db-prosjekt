@@ -1,10 +1,10 @@
 # Treningsdagbok
 
-1. [Brukergrensesnitt](#brukergrensesnitt)
-  i. [Legge til øvelse](#legge-til-ovelse)
-  ii. [Sette et mål](#sette-et-maal)
-  iii. [Lagre et resultat](#lagre-et-resultat)
-2. [Dorull ipsum amen](#dorull-ipsum-amen)
+- [Brukergrensesnitt](#brukergrensesnitt)
+  * [Legge til øvelse](#legge-til-øvelse)
+  * [Sette et mål](#sette-et-mål)
+  * [Lagre et resultat](#lagre-et-resultat)
+- [Dorull ipsum amen](#dorull-ipsum-amen)
 
 ## Brukergrensesnitt
 
