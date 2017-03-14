@@ -70,6 +70,30 @@ public class Database {
     	}
     }
     
+    public static void insertResult(String ovelse, int type, ) {
+    	try {
+    		Connection conn = DriverManager.getConnection(mysqlAddr, mysqlUser, mysqlPass);
+    		//If the exercise is a "kondisjon" exercise
+    		if (type == 0) {
+    			PreparedStatement stmt = conn.prepareStatement("insert into KONDISJONSRESULTAT (Lengde, Tid, Ovelse_id) values (?,?,?)");
+        		stmt.setString(1, Navn);
+        		stmt.setString(2, Beskrivelse);
+        		stmt.setInt(3, Type);
+        		stmt.executeUpdate();	
+    		} 
+    		//If the exercise is a "styrke" exercise
+    		else if (type == 1) {
+    			PreparedStatement stmt = conn.prepareStatement("insert into OVELSE (Navn, Beskrivelse, Type) values (?,?,?)");
+        		stmt.setString(1, Navn);
+        		stmt.setString(2, Beskrivelse);
+        		stmt.setInt(3, Type);
+        		stmt.executeUpdate();
+    		}
+    	} catch(SQLException e) {
+        	System.out.println(e);
+        }
+    }
+    
     /*  FUNKSJON FOR � LEGGE TIL I DATABASEN
     public static void createTopic(Topic topic){
     	try{
