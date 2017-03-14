@@ -11,9 +11,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProgramController">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProgramController">
    <children>
       <TabPane prefHeight="500.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -62,69 +65,75 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
+                        <GridPane layoutX="39.0" layoutY="58.0" prefHeight="337.0" prefWidth="401.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="58.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Startdato:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Måldato:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="startdato" prefHeight="31.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="maaldato" prefHeight="31.0" prefWidth="222.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="kondisjon_boks_lengde" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="kondisjon_boks_tid" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="kondisjon_lengde" text="Lengde:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="kondisjon_tid" text="Tid:" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Øvelse:">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="styrke_belastning" text="Belastning:" visible="false" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="styrke_boks_belastning" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="styrke_repetisjoner" text="Repetisjoner:" visible="false" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="styrke_boks_repetisjoner" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="styrke_boks_sett" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label fx:id="styrke_sett" text="Sett:" visible="false" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="maal_ovelse" prefHeight="31.0" prefWidth="280.0" promptText="Øvelser" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
                         <Label layoutX="193.0" text="Mål">
                            <font>
                               <Font name="Garuda" size="39.0" />
                            </font>
                         </Label>
-                        <DatePicker fx:id="startdato" layoutX="139.0" layoutY="72.0" />
-                        <Label layoutX="14.0" layoutY="69.0" text="Startdato:">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="128.0" text="Måldato:">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <DatePicker fx:id="maaldato" layoutX="139.0" layoutY="131.0" />
-                        <DatePicker fx:id="naddato" layoutX="139.0" layoutY="195.0" />
-                        <Label layoutX="14.0" layoutY="192.0" text="Nåddato:">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <RadioButton fx:id="styrke_knapp" layoutX="258.0" layoutY="253.0" mnemonicParsing="false" onAction="#styrkeButtonIsActivatedInMaal" text="Styrke">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="type_maal" />
-                           </toggleGroup></RadioButton>
-                        <RadioButton fx:id="kondisjon_knapp" layoutX="139.0" layoutY="253.0" mnemonicParsing="false" onAction="#kondisjonButtonIsActivatedInMaal" selected="true" text="Kondisjon" toggleGroup="$type_maal" />
-                        <Label layoutX="14.0" layoutY="246.0" text="Type:">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="styrke_belastning" layoutX="14.0" layoutY="305.0" text="Belastning" visible="false">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="styrke_repetisjoner" layoutX="14.0" layoutY="355.0" text="Repetisjoner" visible="false">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="styrke_sett" layoutX="15.0" layoutY="402.0" text="Sett" visible="false">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="styrke_boks_belastning" layoutX="165.0" layoutY="305.0" visible="false" />
-                        <TextField fx:id="styrke_boks_repetisjoner" layoutX="165.0" layoutY="355.0" visible="false" />
-                        <TextField fx:id="styrke_boks_sett" layoutX="165.0" layoutY="402.0" visible="false" />
-                        <Label fx:id="kondisjon_lengde" layoutX="13.0" layoutY="305.0" text="Lengde">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="kondisjon_tid" layoutX="17.0" layoutY="358.0" text="Tid">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="kondisjon_boks_lengde" layoutX="165.0" layoutY="305.0" />
-                        <TextField fx:id="kondisjon_boks_tid" layoutX="165.0" layoutY="355.0" />
                         <Button fx:id="legg_til_maal_btn" layoutX="345.0" layoutY="415.0" mnemonicParsing="false" text="Legg til Mål" />
                      </children>
                   </AnchorPane>

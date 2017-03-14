@@ -46,6 +46,7 @@ public class ProgramController implements Initializable {
 	@FXML Label kondisjon_lengde;
 	@FXML Label kondisjon_tid;
 	@FXML Button legg_til_maal_btn;
+	@FXML ComboBox<Exercise> maal_ovelse;
 	
 	@FXML RadioButton styrke_knapp1;
 	@FXML RadioButton kondisjon_knapp1;
@@ -147,15 +148,20 @@ public class ProgramController implements Initializable {
 		}
 	}
 	
+	@FXML
 	private void submitGoal(){
 		startdato.getValue();
 	}
+	
+	//@FXML
+	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		ObservableList<Exercise> exerciseList = Database.getExercises();
 		for (Exercise element : exerciseList) {
 			resultat_ovelse_boks.setItems(exerciseList);
+			maal_ovelse.setItems(exerciseList);
 		}
 	}
 	
