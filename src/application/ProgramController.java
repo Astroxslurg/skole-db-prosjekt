@@ -129,7 +129,7 @@ public class ProgramController {
 		}
 		
 		Exercise ex = new Exercise(ovelse_navn.getText(), ovelse_beskrivelse.getText(), type);
-//		Database.insertExercise(ovelse_navn.getText(), ovelse_beskrivelse.getText(), type);
+		Database.insertExercise(ex);
 	}
 	
 	@FXML
