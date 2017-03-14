@@ -97,11 +97,11 @@
                               <Font size="21.0" />
                            </font>
                         </Label>
-                        <RadioButton fx:id="styrke_knapp" layoutX="258.0" layoutY="253.0" mnemonicParsing="false" onAction="#styrkeButtonIsActivatedInMaal" selected="true" text="Styrke">
+                        <RadioButton fx:id="styrke_knapp" layoutX="258.0" layoutY="253.0" mnemonicParsing="false" onAction="#styrkeButtonIsActivatedInMaal" text="Styrke">
                            <toggleGroup>
                               <ToggleGroup fx:id="type_maal" />
                            </toggleGroup></RadioButton>
-                        <RadioButton fx:id="kondisjon_knapp" layoutX="139.0" layoutY="253.0" mnemonicParsing="false" onAction="#kondisjonButtonIsActivatedInMaal" text="Kondisjon" toggleGroup="$type_maal" />
+                        <RadioButton fx:id="kondisjon_knapp" layoutX="139.0" layoutY="253.0" mnemonicParsing="false" onAction="#kondisjonButtonIsActivatedInMaal" text="Kondisjon" toggleGroup="$type_maal" selected="true" />
                         <Label layoutX="14.0" layoutY="246.0" text="Type:">
                            <font>
                               <Font size="21.0" />
