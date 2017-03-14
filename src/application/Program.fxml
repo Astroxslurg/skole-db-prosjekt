@@ -144,17 +144,6 @@
                               <Font name="Garuda" size="39.0" />
                            </font>
                         </Label>
-                        <Label layoutX="31.0" layoutY="138.0" text="Type:">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <RadioButton fx:id="styrke_knapp1" layoutX="203.0" layoutY="145.0" mnemonicParsing="false" onAction="#styrkeButton1IsActivatedInResultater" selected="true" text="Styrke">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="resultat_radio" />
-                           </toggleGroup>
-                        </RadioButton>
-                        <RadioButton fx:id="kondisjon_knapp1" layoutX="115.0" layoutY="145.0" mnemonicParsing="false" onAction="#kondisjonButton1IsActivatedInResultater" selected="true" text="Kondisjon" toggleGroup="$resultat_radio" />
                         <Label fx:id="resultat_kondisjon_lengde" layoutX="28.0" layoutY="236.0" text="Lengde:">
                            <font>
                               <Font size="21.0" />
